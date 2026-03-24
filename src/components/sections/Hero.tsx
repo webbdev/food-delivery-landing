@@ -82,7 +82,7 @@ const Hero = () => {
 						className="w-full h-full"
 					>
 						<img
-							src="/images/strawberries.jpg"
+							src="/images/pears.jpg"
 							alt="Fresh fruits"
 							className="w-full h-full object-cover block opacity-95"
 						/>
@@ -101,7 +101,7 @@ const Hero = () => {
 						className="w-full h-full"
 					>
 						<img
-							src="/images/hero-banner-2.jpeg"
+							src="/images/pineapple.jpg"
 							alt="Fresh fruits"
 							className="w-full h-full object-cover block"
 						/>

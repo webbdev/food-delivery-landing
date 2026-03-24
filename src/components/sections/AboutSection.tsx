@@ -17,7 +17,7 @@ const aboutsection: AboutSectn[] = [
 		description: "FreshFood is dedicated to providing a wide selection of top-quality organic fruits and vegetables, carefully curated to ensure freshness and flavor. We prioritize customer satisfaction by offering premium products and exceptional service. Our commitment to organic farming practices reflects in every bite, promoting a healthier lifestyle for\u00a0our\u00a0customers.",
 		btn: "Learn More",
 		btn_url: "/about",
-		image: "/images/oranges.jpg",
+		image: "/images/blueberry.jpg",
 		image_alt: "Fresh oranges",
 	}
 ]
@@ -62,7 +62,7 @@ const AboutSection = () => {
 
 	return (
 		<section id="about">
-			<div className="md:max-w-[840px] lg:max-w-[1010px] mx-auto text-center py-11 sm:py-12 px-5.5 md:px-7.5">
+			<div className="md:max-w-[840px] lg:max-w-[1010px] mx-auto text-center py-11 sm:py-12 lg:py-20 px-5.5 md:px-7.5">
 				<h2 className="mb-6 sm:mb-10">
 					{aboutsection[0].title}
 				</h2>
@@ -88,7 +88,7 @@ const AboutSection = () => {
 					<img
 						src={aboutsection[0].image}
 						alt={aboutsection[0].image_alt}
-						className="w-full h-auto min-h-[340px] max-h-[580px] lg:max-h-[600px] object-cover block"
+						className="w-full h-auto min-h-[340px] max-h-[540px] lg:max-h-[580px] object-cover block"
 					/>
 				</div>
 			</div>

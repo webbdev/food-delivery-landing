@@ -1,6 +1,6 @@
 # Food Delivery Landing Page
 
-Modern and responsive food delivery landing page built with React, TypeScript, Vite, and Tailwind CSS.
+Modern and responsive food delivery landing page built with React, TypeScript, Vite, and TailwindCSS.
 
 ## Live Demo
 
@@ -17,7 +17,7 @@ Modern and responsive food delivery landing page built with React, TypeScript, V
 - React  
 - TypeScript  
 - Vite  
-- Tailwind CSS  
+- TailwindCSS  
 - React Router
 
 ## How to Run
@@ -30,7 +30,6 @@ git clone https://github.com/webbdev/food-delivery-landing.git
 
 2. Navigate into the project folder
 ```
-
 cd food-delivery-landing
 ```
 
@@ -44,5 +43,5 @@ npm install
 npm run dev
 ```
 
-5. Open in your browser
+5. Open in your browser.
 By default, the app should be running at: http://localhost:5173
