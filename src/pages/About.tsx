@@ -42,17 +42,17 @@ const About: React.FC = () =>{
         >
           {/* ✅ MOBILE TITLE (top of image) */}
           <div className="px-5.5 py-10 sm:hidden">
-            <h2 className="text-2xl font-semibold">
+            <h2 className="">
               {section.title}
             </h2>
           </div>
 
           <div 
             className="
-              relative h-[70vh] sm:h-screen lg:h-[98vh] 
+              relative h-[70vh] sm:h-screen lg:h-[98vh]
               sm:sticky sm:top-0 
               overflow-hidden w-full
-              bg-fixed bg-center bg-cover bg-no-repeat
+              sm:bg-fixed bg-center bg-cover bg-no-repeat
               border-t border-b sm:border-t-0 sm:border-b-0 sm:border-r border-text
             "
             style={{ backgroundImage: `url(${section.image})` }}
