@@ -40,20 +40,13 @@ const About: React.FC = () =>{
           key={index}
           className="grid grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:gap-10 min-h-screen"
         >
-          {/* ✅ MOBILE TITLE (top of image) */}
-          <div className="px-5.5 py-10 sm:hidden">
-            <h2 className="">
-              {section.title}
-            </h2>
-          </div>
-
           <div 
             className="
-              relative h-[70vh] sm:h-screen lg:h-[98vh]
+              relative h-[66vh] sm:h-screen lg:h-[98vh]
               sm:sticky sm:top-0 
               overflow-hidden w-full
               sm:bg-fixed bg-center bg-cover bg-no-repeat
-              border-t border-b sm:border-t-0 sm:border-b-0 sm:border-r border-text
+              sm:border-r border-text
             "
             style={{ backgroundImage: `url(${section.image})` }}
           >
@@ -70,8 +63,7 @@ const About: React.FC = () =>{
                 border-t sm:border-t-0 border-text
               "
             >
-              {/* Desktop title only */}
-              <h2 className="hidden sm:block mb-8 sm:mb-10 md:mb-20 md:mt-6">
+              <h2 className="mb-8 sm:mb-10 md:mb-20 md:mt-6">
                 {section.title}
               </h2>
 
