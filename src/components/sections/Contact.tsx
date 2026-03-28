@@ -66,7 +66,7 @@ const Contact = () => {
         className="
           relative h-[82vh] sm:h-[90vh] lg:h-[99vh] 
           min-h-[620px] sm:min-h-[700px] w-full
-          bg-fixed bg-center bg-cover
+          sm:bg-fixed bg-center bg-cover
         "
         style={{ backgroundImage: "url('/images/banner-vegetables.jpeg')" }}
       >
