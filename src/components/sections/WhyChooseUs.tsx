@@ -39,7 +39,7 @@ const WhyChooseUs: React.FC = () => {
 					Why Choose Us
 				</h2>
 
-				<div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8 md:gap-10 lg:gap-20 xl:gap-30">
+				<div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-6 md:gap-10 lg:gap-20 xl:gap-30">
 					{features.map((item) => (
 						<div
 							key={item.id}
