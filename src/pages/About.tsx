@@ -45,17 +45,36 @@ const About: React.FC = () => {
           key={index}
           className="grid grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:gap-10 min-h-screen"
         >
+          {/* IMAGE PANEL */}
           <div
             className="
               relative h-[66vh] sm:h-screen lg:h-[98vh]
-              sm:sticky sm:top-0 
+              sm:sticky sm:top-0
               overflow-hidden w-full
-              sm:bg-fixed bg-center bg-cover bg-no-repeat
               border-b sm:border-b-0 sm:border-r border-text
             "
-            style={{ backgroundImage: `url(${section.image})` }}
           >
-            {/* overlay */}
+            {/* ── Mobile only: plain <img>, no bg-fixed zoom issue ── */}
+            <img
+              src={section.image}
+              alt={section.title}
+              className="
+                sm:hidden
+                absolute inset-0 w-full h-full object-cover object-center
+              "
+            />
+
+            {/* ── Desktop only: bg-fixed parallax/overlay effect ── */}
+            <div
+              className="
+                hidden sm:block
+                absolute inset-0
+                bg-fixed bg-center bg-cover bg-no-repeat
+              "
+              style={{ backgroundImage: `url(${section.image})` }}
+            />
+
+            {/* overlay (shared) */}
             <div className="absolute inset-0 bg-white/10" />
           </div>
 
@@ -63,7 +82,7 @@ const About: React.FC = () => {
           <div className="text-left relative z-10">
             <div
               className="
-                max-w-[660px] 
+                max-w-[660px]
                 px-5.5 sm:px-10 py-12
                 -mt-24 sm:mt-0
                 bg-background
@@ -90,12 +109,8 @@ const About: React.FC = () => {
                   transition={{ duration: 0.6, delay: i * 0.15 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="subtitle mb-5 sm:mb-6">
-                    {item.sub_title}
-                  </h3>
-                  <p className="text-base sm:text-[17px]">
-                    {item.description}
-                  </p>
+                  <h3 className="subtitle mb-5 sm:mb-6">{item.sub_title}</h3>
+                  <p className="text-base sm:text-[17px]">{item.description}</p>
                 </motion.div>
               ))}
             </div>
