@@ -61,7 +61,7 @@ const AboutSection = () => {
 	}, [])
 
 	return (
-		<section id="about">
+		<section id="about" className="border-b border-text">
 			<div className="md:max-w-[840px] lg:max-w-[1010px] mx-auto text-center py-11 sm:py-12 lg:py-20 px-5.5 md:px-7.5">
 				<h2 className="mb-6 sm:mb-10">
 					{aboutsection[0].title}
@@ -77,7 +77,7 @@ const AboutSection = () => {
 				</a>
 			</div>
 
-			<div className="w-full overflow-hidden border-t border-b border-text">
+			<div className="w-full overflow-hidden border-t border-text">
 				<div
 					ref={imgRef}
 					className="w-full will-change-transform transform-gpu"
@@ -88,7 +88,7 @@ const AboutSection = () => {
 					<img
 						src={aboutsection[0].image}
 						alt={aboutsection[0].image_alt}
-						className="w-full h-auto min-h-[340px] max-h-[540px] lg:max-h-[580px] object-cover block"
+						className="w-full h-auto min-h-[200px] sm:min-h-[340px] max-h-[400px] md:max-h-[400px] lg:max-h-[580px] object-cover block"
 					/>
 				</div>
 			</div>

@@ -13,21 +13,21 @@ const features: Feature[] = [
 		title: "Quality",
 		description:
 		"We source the finest organic fruits and vegetables to ensure premium quality and taste for our customers.",
-		image: "/images/quality.jpg",
+		image: "/images/img_6.jpg",
 	},
 	{
 		id: 2,
 		title: "Variety",
 		description:
 		"Experience a diverse range of seasonal fruits and vegetables, handpicked for freshness and nutritional value.",
-		image: "/images/variety.jpg",
+		image: "/images/img-4.jpg",
 	},
 	{
 		id: 3,
 		title: "Service",
 		description:
 		"Our dedicated team is committed to providing exceptional customer care and a seamless delivery experience.",
-		image: "/images/service.jpg",
+		image: "/images/img-8.jpg",
 	},
 ];
 
