@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import Container from "../Container"
 
 type TestimonialsSection = {
@@ -29,9 +30,15 @@ const Testimonials: React.FC = () => {
 		<section className="pt-9 sm:pt-10 pb-9 sm:pb-0 border-b border-text">
 			<Container>
 				<div>
-					<h2 className="border-b border-text pb-8 sm:pb-10">
+					<motion.h2
+						className="border-b border-text pb-8 sm:pb-10"
+						initial={{ opacity: 0, y: 24 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6 }}
+						viewport={{ once: true, amount: 0.5 }}
+					>
 						Customer Testimonials
-					</h2>
+					</motion.h2>
 
 					<div>
 						{testimonialsSection.map(({ id, name, text }, index) => {
@@ -47,8 +54,26 @@ const Testimonials: React.FC = () => {
 										${!isLast ? "border-b border-text" : ""}
 									`}
 								>
-									<p className="text-base sm:text-lg">{name}</p>
-									<p className="text-base sm:text-xl max-w-[520px]">{text}</p>
+									{/* NAME */}
+									<motion.p
+										className="text-base sm:text-lg"
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										transition={{ duration: 0.5, delay: 0.1 }}
+										viewport={{ once: true, amount: 0.5 }}
+									>
+										{name}
+									</motion.p>
+									{/* REVIEW */}
+									<motion.p
+										className="text-base sm:text-xl max-w-[520px]"
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										transition={{ duration: 0.5, delay: 0.2 }}
+										viewport={{ once: true, amount: 0.5 }}
+									>
+										{text}
+									</motion.p>
 								</div>
 							);
 						})}
