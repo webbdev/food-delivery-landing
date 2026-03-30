@@ -44,8 +44,8 @@ const FeatureCard: React.FC<{ item: Feature; index: number }> = ({ item, index }
   // Only 1st (index 0) and 3rd (index 2) get scroll scale on desktop
   const isScaled = index === 0 || index === 2;
 
-  const scaleMobile = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.1, 1.3]);
-  const scaleDesktop = useTransform(scrollYProgress, [0, 0.5, 1], isScaled ? [1, 1.1, 1.3] : [1, 1, 1]);
+  const scaleMobile = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.15, 1.3]);
+  const scaleDesktop = useTransform(scrollYProgress, [0, 0.5, 1], isScaled ? [1, 1.15, 1.3] : [1, 1, 1]);
 
   return (
     <div ref={ref} className="flex flex-col text-left">

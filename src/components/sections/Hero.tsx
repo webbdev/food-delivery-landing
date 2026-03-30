@@ -1,53 +1,50 @@
 import { useNavigate, useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 
 const Hero = () => {
-	const [scale, setScale] = useState(1)
+	const ref = useRef<HTMLElement>(null)
 
-	// Scroll scale effect
-	useEffect(() => {
-		const handleScroll = () => {
-			const scrollY = window.scrollY
-			const newScale = Math.min(1 + scrollY * 0.0005, 1.2)
-			setScale(newScale)
-		}
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["start start", "end start"],
+	})
 
-		window.addEventListener("scroll", handleScroll)
-		return () => window.removeEventListener("scroll", handleScroll)
-	}, [])
+	// Smooth scale from 1 → 1.2 as hero scrolls out of view
+	const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3])
 
-	const navigate = useNavigate();
-	const location = useLocation();
+	const navigate = useNavigate()
+	const location = useLocation()
 
 	const scrollToAbout = () => {
-		const target = document.getElementById("about");
+		const target = document.getElementById("about")
 		if (target) {
 			window.scrollTo({
 				top: target.offsetTop - 60,
 				behavior: "smooth",
-			});
+			})
 		}
-	};
+	}
 
 	const handleExploreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-		e.preventDefault();
-
+		e.preventDefault()
 		if (location.pathname !== "/") {
-			navigate("/");
-			setTimeout(scrollToAbout, 150);
+			navigate("/")
+			setTimeout(scrollToAbout, 150)
 		} else {
-			scrollToAbout();
+			scrollToAbout()
 		}
-	};
+	}
 
 	return (
-		<section className="w-full grid grid-cols-1 md:grid-cols-2 border-b border-text md:min-h-[90vh]">
-
+		<section
+			ref={ref}
+			className="w-full grid grid-cols-1 md:grid-cols-2 border-b border-text md:min-h-[90vh]"
+		>
 			{/* LEFT COLUMN */}
 			<div className="grid grid-rows-[1fr_auto] h-full overflow-hidden text-center">
 
-				{/* TEXT (vertically centered) */}
+				{/* TEXT */}
 				<motion.div
 					className="px-6 md:px-10 py-10 md:py-12 max-w-xl mx-auto
 								flex flex-col justify-center items-center text-center gap-5 md:gap-6"
@@ -76,38 +73,25 @@ const Hero = () => {
 
 				{/* IMAGE 1 */}
 				<div className="w-full h-full overflow-hidden border-t md:border-t-0 border-text">
-					<motion.div
+					<motion.img
+						src="/images/pears.jpg"
+						alt="Fresh fruits"
 						style={{ scale }}
-						transition={{ type: 'spring', stiffness: 120, damping: 25 }}
-						className="w-full h-full"
-					>
-						<img
-							src="/images/pears.jpg"
-							alt="Fresh fruits"
-							className="w-full h-full object-cover block opacity-95"
-						/>
-					</motion.div>
+						className="w-full h-full object-cover block opacity-95"
+					/>
 				</div>
 			</div>
 
 			{/* RIGHT COLUMN */}
 			<div className="md:border-l border-text overflow-hidden h-full">
-
-				{/* MOBILE HEIGHT CONTROL */}
 				<div className="h-[340px] xs:h-[380px] sm:h-[420px] md:h-full overflow-hidden">
-					<motion.div
+					<motion.img
+						src="/images/pineapple.jpg"
+						alt="Fresh fruits"
 						style={{ scale }}
-						transition={{ type: 'spring', stiffness: 120, damping: 25 }}
-						className="w-full h-full"
-					>
-						<img
-							src="/images/pineapple.jpg"
-							alt="Fresh fruits"
-							className="w-full h-full object-cover block"
-						/>
-					</motion.div>
+						className="w-full h-full object-cover block"
+					/>
 				</div>
-
 			</div>
 
 		</section>
