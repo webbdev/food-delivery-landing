@@ -70,7 +70,7 @@ const FeatureCard: React.FC<{ item: Feature; index: number }> = ({ item, index }
 
       {/* HEADING */}
       <motion.h3
-        className="subtitle text-left mt-10 sm:mt-14 mb-6 sm:mb-8"
+        className="subtitle text-left mt-8 sm:mt-15 mb-4 sm:mb-9"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -81,7 +81,7 @@ const FeatureCard: React.FC<{ item: Feature; index: number }> = ({ item, index }
 
       {/* DESCRIPTION */}
       <motion.p
-        className="text-base sm:text-lg text-left"
+        className="text-base text-left"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 + 0.1 }}
@@ -97,12 +97,12 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section
       id="why-us"
-      className="pt-14 sm:pt-18 pb-16 sm:pb-26 bg-bg text-text border-b border-text"
+      className="pt-15 sm:pt-18 lg:pt-24 pb-14 sm:pb-26 lg:pb-30 bg-bg text-text border-b border-text"
     >
       <Container>
         {/* SECTION TITLE */}
         <motion.h2
-          className="text-center mb-10 sm:mb-20"
+          className="text-center mb-8 sm:mb-20 lg:mb-24"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -111,7 +111,7 @@ const WhyChooseUs: React.FC = () => {
           Why Choose Us
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-6 md:gap-10 lg:gap-20 xl:gap-30">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6 md:gap-10 lg:gap-20 xl:gap-30">
           {features.map((item, index) => (
             <FeatureCard key={item.id} item={item} index={index} />
           ))}

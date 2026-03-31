@@ -63,23 +63,19 @@ h6 {
 }
 
 h2 {
-  @apply text-[38px] sm:text-[50px] md:text-[68px];
+  @apply text-[36px] sm:text-[50px] md:text-[68px];
 }
 
 h3.subtitle {
-  @apply text-[22px] sm:text-[22px] md:text-[26px] font-light;
+  @apply text-[22px] sm:text-[22px] md:text-[24px] font-light;
   font-family: var(--font-body);
 }
-
-/* p {
-  @apply text-base sm:text-lg;
-} */
 
 /* -------------------------------------
    Custom Button Style
 ------------------------------------- */
 .btn {
-  @apply text-[15px] sm:text-base px-7 sm:px-8 py-2.25 sm:py-3 rounded-3xl transition-all duration-400;
+  @apply text-[15px] sm:text-base px-7 sm:px-8 py-3 rounded-3xl transition-all duration-400;
   background-color: var(--color-btn-bg);
   color: var(--color-btn-text);
   border: 1px solid var(--color-btn-bg);

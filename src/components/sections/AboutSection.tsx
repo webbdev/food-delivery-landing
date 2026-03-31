@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
+import { motion, useScroll, useTransform, type Variants } from "framer-motion"
 
 type AboutSectn = {
 	title: string;
@@ -9,7 +10,7 @@ type AboutSectn = {
 	image: string;
 	image_alt: string;
 };
-	
+
 const aboutsection: AboutSectn[] = [
 	{
 		title: "About",
@@ -18,79 +19,97 @@ const aboutsection: AboutSectn[] = [
 		btn: "Learn More",
 		btn_url: "/about",
 		image: "/images/blueberry.jpg",
-		image_alt: "Fresh oranges",
+		image_alt: "Fresh organic blueberries",
 	}
 ]
 
+const fadeUp: Variants = {
+	hidden: { opacity: 0, y: 24 },
+	visible: (delay: number = 0) => ({
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.6, ease: "easeOut", delay },
+	}),
+}
+
 const AboutSection = () => {
-	const imgRef = useRef<HTMLDivElement | null>(null)
-	const [scale, setScale] = useState(1)
+	const imgRef = useRef<HTMLDivElement>(null)
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (!imgRef.current) return
+	const { scrollYProgress } = useScroll({
+		target: imgRef,
+		offset: ["start end", "end start"],
+	})
 
-			const rect = imgRef.current.getBoundingClientRect()
-			const windowHeight = window.innerHeight
-			const imageHeight = rect.height
-
-			// Check if visible
-			const isVisible = rect.bottom > 0 && rect.top < windowHeight
-			if (!isVisible) return
-
-			// Calculate scroll progress (0 → 1)
-			const totalScrollDistance = windowHeight + imageHeight
-			const scrolledThrough = windowHeight - rect.top
-
-			const progress = Math.min(
-				Math.max(scrolledThrough / totalScrollDistance, 0),
-				1
-			)
-
-			// Hero-style scale effect
-			const newScale = 1 + progress * 0.25
-			setScale(newScale)
-		}
-
-		window.addEventListener("scroll", handleScroll, { passive: true })
-		handleScroll()
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll)
-		}
-	}, [])
+	const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25])
 
 	return (
-		<section id="about" className="border-b border-text">
-			<div className="md:max-w-[840px] lg:max-w-[1010px] mx-auto text-center py-11 sm:py-12 lg:py-20 px-5.5 md:px-7.5">
-				<h2 className="mb-6 sm:mb-10">
+		<section id="about" aria-labelledby="about-title" className="border-b border-text">
+			<div className="md:max-w-[840px] lg:max-w-[980px] mx-auto text-center py-11 sm:py-12 lg:py-20 px-5.5 md:px-7.5">
+
+				{/* TITLE */}
+				<motion.h2
+					id="about-title"
+					className="mb-4 sm:mb-10"
+					variants={fadeUp}
+					initial="hidden"
+					whileInView="visible"
+					custom={0}
+					viewport={{ once: true, amount: 0.5 }}
+				>
 					{aboutsection[0].title}
-				</h2>
-				<h3 className="subtitle mb-6 sm:mb-7">
+				</motion.h2>
+
+				{/* SUBTITLE */}
+				<motion.h3
+					className="subtitle mb-4 sm:mb-7"
+					variants={fadeUp}
+					initial="hidden"
+					whileInView="visible"
+					custom={0.1}
+					viewport={{ once: true, amount: 0.5 }}
+				>
 					{aboutsection[0].sub_title}
-				</h3>
-				<p className="text-base sm:text-lg mb-7 sm:mb-9">
+				</motion.h3>
+
+				{/* DESCRIPTION */}
+				<motion.p
+					className="text-base mb-6 sm:mb-9"
+					variants={fadeUp}
+					initial="hidden"
+					whileInView="visible"
+					custom={0.2}
+					viewport={{ once: true, amount: 0.5 }}
+				>
 					{aboutsection[0].description}
-				</p>
-				<a href={aboutsection[0].btn_url} className="btn inline-block mb-1 sm:mb-2">
+				</motion.p>
+
+				{/* BUTTON */}
+				<motion.a
+					href={aboutsection[0].btn_url}
+					aria-label="Learn more about FreshFood"
+					className="btn inline-block mb-0 sm:mb-2"
+					variants={fadeUp}
+					initial="hidden"
+					whileInView="visible"
+					custom={0.3}
+					viewport={{ once: true, amount: 0.5 }}
+				>
 					{aboutsection[0].btn}
-				</a>
+				</motion.a>
 			</div>
 
-			<div className="w-full overflow-hidden border-t border-text">
-				<div
-					ref={imgRef}
-					className="w-full will-change-transform transform-gpu"
-					style={{
-						transform: `scale(${scale})`,
-					}}
-				>
-					<img
-						src={aboutsection[0].image}
-						alt={aboutsection[0].image_alt}
-						className="w-full h-auto min-h-[200px] sm:min-h-[340px] max-h-[400px] md:max-h-[400px] lg:max-h-[580px] object-cover block"
-					/>
-				</div>
+			{/* IMAGE */}
+			<div ref={imgRef} className="w-full overflow-hidden border-t border-text">
+				<motion.img
+					src={aboutsection[0].image}
+					alt={aboutsection[0].image_alt}
+					style={{ scale }}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1, ease: "easeOut" }}
+					viewport={{ once: true, amount: 0.2 }}
+					className="w-full h-auto min-h-[200px] sm:min-h-[340px] max-h-[400px] md:max-h-[400px] lg:max-h-[580px] object-cover block"
+				/>
 			</div>
 		</section>
 	)
