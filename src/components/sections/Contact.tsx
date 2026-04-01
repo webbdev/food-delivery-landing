@@ -67,8 +67,8 @@ const Contact = () => {
         role="img"
         aria-label="Fresh vegetables background"
         className="
-          relative h-[82vh] sm:h-[90vh] lg:h-[99vh]
-          min-h-[620px] sm:min-h-[700px] w-full
+          relative h-[80vh] sm:h-[84vh] md:h-[94vh] lg:h-[98vh]
+          min-h-[620px] sm:min-h-[700px] md:min-h-[740px] w-full
           sm:bg-fixed bg-center bg-cover
         "
         style={{ backgroundImage: "url('/images/banner-vegetables.jpeg')" }}

@@ -27,8 +27,8 @@ const testimonialsSection: TestimonialsSection[] = [
 
 const Testimonials: React.FC = () => {
 	return (
-		<section className="pt-6 sm:pt-10 pb-6 sm:pb-0 border-b border-text">
-			<div className="border-b border-text pb-6 sm:pb-10">
+		<section className="pt-7 sm:pt-10 pb-6 sm:pb-0 border-b border-text">
+			<div className="border-b border-text pb-7 sm:pb-10">
 				<Container>
 					<motion.h2
 						className=""

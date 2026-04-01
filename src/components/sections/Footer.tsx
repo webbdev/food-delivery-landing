@@ -29,7 +29,7 @@ const Footer = () => {
     <footer aria-label="Site footer" className="relative">
 
       {/* LOGO */}
-      <div className="border-b border-text pt-8 pb-7 md:py-12">
+      <div className="border-b border-text pt-10 pb-7 md:py-12">
         <Container>
           <motion.h3
             className="text-[27px] md:text-[37px]"
@@ -116,8 +116,8 @@ const Footer = () => {
               viewport={{ once: true, amount: 0.3 }}
             >
               <nav aria-label="Footer navigation">
-                <ul className="flex flex-col gap-3">
-                  <li>
+                <ul className="flex flex-col">
+                  <li className="mb-4 md:mb-0">
                     <a
                       href="/privacy"
                       className="hover:underline hover:text-text/60 transition-colors duration-300"
