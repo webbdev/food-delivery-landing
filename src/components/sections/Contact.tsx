@@ -84,7 +84,7 @@ const Contact = () => {
           -translate-x-1/2 -translate-y-1/2
           w-[90%] max-w-[700px]
           mx-auto bg-bg
-          py-10 px-6 sm:px-14
+          pt-9 pb-10 sm:py-10 px-6 sm:px-14
           shadow-xl rounded-xl
         "
       >
