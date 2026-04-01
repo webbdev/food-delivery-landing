@@ -92,7 +92,7 @@ h3.subtitle {
 
 .form-input {
   @apply
-    text-sm sm:text-base
+    text-base
     border border-text/30
     px-2.5 py-2
     shadow-none
@@ -105,18 +105,18 @@ h3.subtitle {
 }
 
 .form-textarea {
-    @apply 
-      text-sm sm:text-base
-      border border-text/30
-      px-2.5 py-2
-      resize-none
-      shadow-none
-      focus:outline-none 
-      focus-visible:outline-none
-      focus:border-text
-      focus:ring-0 focus-visible:ring-0
-      focus:ring-offset-0 focus-visible:ring-offset-0
-      active:ring-0;
+  @apply 
+    text-base
+    border border-text/30
+    px-2.5 py-2
+    resize-none
+    shadow-none
+    focus:outline-none 
+    focus-visible:outline-none
+    focus:border-text
+    focus:ring-0 focus-visible:ring-0
+    focus:ring-offset-0 focus-visible:ring-offset-0
+    active:ring-0;
 }
 
 .form-label {

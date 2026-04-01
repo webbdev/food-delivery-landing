@@ -84,18 +84,13 @@ const AboutSection = () => {
 				</motion.p>
 
 				{/* BUTTON */}
-				<motion.a
+				<a
 					href={aboutsection[0].btn_url}
 					aria-label="Learn more about FreshFood"
 					className="btn inline-block mb-0 sm:mb-2"
-					variants={fadeUp}
-					initial="hidden"
-					whileInView="visible"
-					custom={0.3}
-					viewport={{ once: true, amount: 0.5 }}
 				>
 					{aboutsection[0].btn}
-				</motion.a>
+				</a>
 			</div>
 
 			{/* IMAGE */}

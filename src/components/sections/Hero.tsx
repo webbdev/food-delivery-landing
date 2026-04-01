@@ -47,7 +47,7 @@ const Hero = () => {
 				{/* TEXT — staggered children */}
 				<motion.div
 					className="
-						px-6 md:px-10 py-10 md:py-12
+						px-6 md:px-10 pt-10 pb-11 md:py-12
 						max-w-xl mx-auto
 						flex flex-col
 						justify-center items-center text-center
@@ -92,7 +92,7 @@ const Hero = () => {
 							href="/#about"
 							onClick={handleExploreClick}
 							aria-label="Explore more — scroll to About section"
-							className="btn mb-2 sm:mb-3 max-w-44 md:max-w-48 w-full text-center"
+							className="btn mb-3 max-w-44 md:max-w-48 w-full text-center"
 						>
 							Explore more
 						</a>
