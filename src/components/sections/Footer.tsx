@@ -117,7 +117,7 @@ const Footer = () => {
             >
               <nav aria-label="Footer navigation">
                 <ul className="flex flex-col">
-                  <li className="mb-4 md:mb-0">
+                  <li className="mb-3 md:mb-0">
                     <a
                       href="/privacy"
                       className="hover:underline hover:text-text/60 transition-colors duration-300"
