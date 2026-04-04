@@ -11,14 +11,14 @@ const fadeUp: Variants = {
 
 const Accessibility = () => {
 	return (
-		<main className="relative border-b border-text text-center mx-auto">
+		<main className="border-b border-text text-center mx-auto">
 			<div className="max-w-[850px] mx-auto text-center py-12 sm:py-14 md:py-16 px-5.5 md:px-7.5">
 				<article className="text-left">
 
 					{/* HEADER */}
 					<div className="border-b border-text">
 						<motion.h2
-							className="mb-8 sm:mb-10"
+							className="mb-8 sm:mb-9 md:mb-10"
 							variants={fadeUp}
 							initial="hidden"
 							whileInView="visible"
@@ -122,7 +122,7 @@ const Accessibility = () => {
 						</motion.h3>
 
 						<motion.p
-							className="text-base mb-3 sm:mb-8"
+							className="text-base mb-3 sm:mb-5 md:mb-8"
 							variants={fadeUp}
 							initial="hidden"
 							whileInView="visible"

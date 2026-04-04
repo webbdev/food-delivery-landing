@@ -91,7 +91,7 @@ const About: React.FC = () => {
             >
               {/* TITLE */}
               <motion.h2
-                className="mb-8 sm:mb-10 md:mb-20 md:mt-6"
+                className="mb-8 sm:mb-10 md:mb-16 lg:mb-20 md:mt-6"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -103,7 +103,7 @@ const About: React.FC = () => {
               {section.sub_section.map((item, i) => (
                 <motion.div
                   key={item.id}
-                  className="mb-10 last:mb-2 md:mb-20 md:last:mb-16"
+                  className="mb-10 last:mb-2 md:mb-16 lg:mb-20 md:last:mb-12 lg:last:mb-16"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: i * 0.15 }}

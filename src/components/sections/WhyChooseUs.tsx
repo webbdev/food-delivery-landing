@@ -70,7 +70,7 @@ const FeatureCard: React.FC<{ item: Feature; index: number }> = ({ item, index }
 
       {/* HEADING */}
       <motion.h3
-        className="subtitle text-left mt-8 sm:mt-15 mb-4 sm:mb-9"
+        className="subtitle text-left mt-8 sm:mt-12 md:mt-15 mb-4 sm:mb-6 md:mb-9"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -97,12 +97,12 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section
       id="why-us"
-      className="pt-15 sm:pt-18 lg:pt-24 pb-14 sm:pb-26 lg:pb-30 bg-bg text-text border-b border-text"
+      className="pt-15 sm:pt-16 md:pt-18 lg:pt-24 pb-14 sm:pb-22 md:pb-26 lg:pb-30 bg-bg text-text border-b border-text"
     >
       <Container>
         {/* SECTION TITLE */}
         <motion.h2
-          className="text-center mb-8 sm:mb-20 lg:mb-24"
+          className="text-center mb-8 sm:mb-16 md:mb-18 lg:mb-24"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

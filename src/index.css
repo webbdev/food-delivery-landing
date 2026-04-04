@@ -67,7 +67,7 @@ h2 {
 }
 
 h3.subtitle {
-  @apply text-[22px] sm:text-[22px] md:text-[24px] font-light;
+  @apply text-[22px] md:text-[24px] font-light;
   font-family: var(--font-body);
 }
 

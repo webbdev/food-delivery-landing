@@ -44,12 +44,12 @@ const AboutSection = () => {
 
 	return (
 		<section id="about" aria-labelledby="about-title" className="border-b border-text">
-			<div className="md:max-w-[840px] lg:max-w-[980px] mx-auto text-center py-11 sm:py-12 lg:py-20 px-5.5 md:px-7.5">
+			<div className="md:max-w-[840px] lg:max-w-[980px] mx-auto text-center py-11 sm:py-12 md:py-14 lg:py-20 px-5.5 md:px-7.5">
 
 				{/* TITLE */}
 				<motion.h2
 					id="about-title"
-					className="mb-4 sm:mb-10"
+					className="mb-4 sm:mb-6 md:mb-10"
 					variants={fadeUp}
 					initial="hidden"
 					whileInView="visible"
@@ -61,7 +61,7 @@ const AboutSection = () => {
 
 				{/* SUBTITLE */}
 				<motion.h3
-					className="subtitle mb-4 sm:mb-7"
+					className="subtitle mb-4 sm:mb-5 md:mb-7"
 					variants={fadeUp}
 					initial="hidden"
 					whileInView="visible"
@@ -73,7 +73,7 @@ const AboutSection = () => {
 
 				{/* DESCRIPTION */}
 				<motion.p
-					className="text-base mb-6 sm:mb-9"
+					className="text-base mb-6 sm:mb-7 md:mb-9"
 					variants={fadeUp}
 					initial="hidden"
 					whileInView="visible"
