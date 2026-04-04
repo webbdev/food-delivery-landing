@@ -120,7 +120,7 @@ const NewsletterForm = () => {
                   />
                 </FormControl>
                 <FormLabel
-                  className="text-[15px] sm:text-base font-light cursor-pointer"
+                  className="text-[15px] sm:text-base font-light cursor-pointer gap-0.5"
                   htmlFor="newsletter_optIn"
                 >
                   I want to subscribe to your mailing list.{" "}

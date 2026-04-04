@@ -24,6 +24,16 @@ const Header: React.FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
+  /* ── Close menu when resizing to desktop (sm = 640px) ── */
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 640px)")
+    const handleResize = (e: MediaQueryListEvent) => {
+      if (e.matches) setIsOpen(false)
+    }
+    mediaQuery.addEventListener("change", handleResize)
+    return () => mediaQuery.removeEventListener("change", handleResize)
+  }, [])
+
   /* ── Mobile menu scroll lock ── */
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto"

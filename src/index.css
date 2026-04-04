@@ -120,7 +120,7 @@ h3.subtitle {
 }
 
 .form-label {
-  @apply text-xs sm:text-sm font-light;
+  @apply text-xs sm:text-sm font-light gap-0.5;
 }
 
 @keyframes fade-in {
