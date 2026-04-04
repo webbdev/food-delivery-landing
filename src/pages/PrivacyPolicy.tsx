@@ -1,9 +1,9 @@
 const PrivacyPolicy = () => {
 	return (
 		<div className="relative border-b border-text text-center mx-auto">
-			<div className="max-w-[680px] mx-auto text-center py-9 sm:py-12 md:py-14 px-5.5 md:px-7.5">
+			<div className="max-w-[680px] mx-auto text-center py-12 sm:py-14 md:py-16 px-5.5 md:px-7.5">
 				<div className="text-left">
-					<h2 className="mb-6 sm:mb-12">
+					<h2 className="mb-8 sm:mb-12">
 						Privacy Policy
 					</h2>
 					<p className="text-base mb-5 sm:mb-8">
