@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 type About = {
@@ -38,6 +39,8 @@ const about: About[] = [
 ];
 
 const About: React.FC = () => {
+  const [imageLoaded, setImageLoaded] = useState(false)
+
   return (
     <div className="relative border-b border-text">
       {about.map((section, index) => (
@@ -53,19 +56,27 @@ const About: React.FC = () => {
               overflow-hidden w-full
               border-b sm:border-b-0 sm:border-r border-text
             "
+            style={{ backgroundColor: "#d4e9cf" }}
           >
-            {/* ── Mobile only: plain <img>, no bg-fixed zoom issue ── */}
-            <img
+            {/* ── Mobile: plain <img> with fade in ── */}
+            <motion.img
               src={section.image}
               alt={section.title}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: imageLoaded ? 1 : 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              onLoad={() => setImageLoaded(true)}
               className="
                 sm:hidden
                 absolute inset-0 w-full h-full object-cover object-center
               "
             />
 
-            {/* ── Desktop only: bg-fixed parallax/overlay effect ── */}
-            <div
+            {/* ── Desktop: bg-fixed parallax, fades in once image is loaded ── */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: imageLoaded ? 1 : 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
               className="
                 hidden sm:block
                 absolute inset-0

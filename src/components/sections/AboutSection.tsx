@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useScroll, useTransform, type Variants } from "framer-motion"
 
 type AboutSectn = {
@@ -34,6 +34,7 @@ const fadeUp: Variants = {
 
 const AboutSection = () => {
 	const imgRef = useRef<HTMLDivElement>(null)
+	const [imageLoaded, setImageLoaded] = useState(false)
 
 	const { scrollYProgress } = useScroll({
 		target: imgRef,
@@ -94,15 +95,19 @@ const AboutSection = () => {
 			</div>
 
 			{/* IMAGE */}
-			<div ref={imgRef} className="w-full overflow-hidden border-t border-text">
+			<div
+				ref={imgRef}
+				className="w-full overflow-hidden border-t border-text"
+				style={{ backgroundColor: "#d4e9cf" }}
+			>
 				<motion.img
 					src={aboutsection[0].image}
 					alt={aboutsection[0].image_alt}
 					style={{ scale }}
 					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
+					animate={{ opacity: imageLoaded ? 1 : 0 }}
 					transition={{ duration: 1, ease: "easeOut" }}
-					viewport={{ once: true, amount: 0.2 }}
+					onLoad={() => setImageLoaded(true)}
 					className="w-full h-auto min-h-[200px] sm:min-h-[340px] max-h-[400px] md:max-h-[400px] lg:max-h-[580px] object-cover block"
 				/>
 			</div>

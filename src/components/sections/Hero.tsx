@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const Hero = () => {
@@ -11,6 +11,9 @@ const Hero = () => {
 	})
 
 	const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3])
+
+	const [pairsLoaded, setPearsLoaded] = useState(false)
+	const [pineappleLoaded, setPineappleLoaded] = useState(false)
 
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -40,11 +43,11 @@ const Hero = () => {
 			ref={ref}
 			aria-label="Hero"
 			className="w-full grid grid-cols-1 md:grid-cols-2 border-b border-text md:min-h-[90vh]"
-		>
+			>
 			{/* LEFT COLUMN */}
 			<div className="grid grid-rows-[1fr_auto] h-full overflow-hidden text-center">
 
-				{/* TEXT — staggered children */}
+				{/* TEXT */}
 				<motion.div
 					className="
 						px-6 md:px-10 pt-10 pb-11 md:py-12
@@ -75,8 +78,8 @@ const Hero = () => {
 					<motion.p
 						className="max-w-[340px] md:max-w-[380px] text-[17px] mb-2 sm:mb-3"
 						variants={{
-						hidden: { opacity: 0, y: 24 },
-						visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+							hidden: { opacity: 0, y: 24 },
+							visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 						}}
 					>
 						Organic fruits and vegetables, carefully selected and delivered to your door.
@@ -100,14 +103,18 @@ const Hero = () => {
 				</motion.div>
 
 				{/* IMAGE 1 */}
-				<div className="w-full h-full overflow-hidden border-t md:border-t-0 border-text">
+				<div
+					className="w-full h-full overflow-hidden border-t md:border-t-0 border-text"
+					style={{ backgroundColor: "#d4e9cf" }}
+				>
 					<motion.img
 						src="/images/pears.jpg"
 						alt="A fresh organic pears"
 						style={{ scale }}
 						initial={{ opacity: 0 }}
-						animate={{ opacity: 0.95 }}
-						transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+						animate={{ opacity: pairsLoaded ? 0.95 : 0 }}
+						transition={{ duration: 1, ease: "easeOut" }}
+						onLoad={() => setPearsLoaded(true)}
 						className="w-full h-full object-cover block"
 					/>
 				</div>
@@ -115,14 +122,18 @@ const Hero = () => {
 
 			{/* RIGHT COLUMN */}
 			<div className="md:border-l border-text overflow-hidden h-full">
-				<div className="h-[340px] xs:h-[380px] sm:h-[420px] md:h-full overflow-hidden">
+				<div
+					className="h-[340px] xs:h-[380px] sm:h-[420px] md:h-full overflow-hidden"
+					style={{ backgroundColor: "#d4e9cf" }}
+				>
 					<motion.img
 						src="/images/pineapple.jpg"
 						alt="A fresh organic pineapple"
 						style={{ scale }}
 						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+						animate={{ opacity: pineappleLoaded ? 1 : 0 }}
+						transition={{ duration: 1, ease: "easeOut" }}
+						onLoad={() => setPineappleLoaded(true)}
 						className="w-full h-full object-cover block"
 					/>
 				</div>
