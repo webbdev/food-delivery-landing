@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 /* -------------------------------------
-   Tailwind Theme (v4+)
+  Tailwind Theme (v4+)
 ------------------------------------- */
 @theme {
   --breakpoint-xs: 475px;
@@ -16,19 +16,16 @@
   --color-text: #052812;         /* Primary text color */
 
   /* Buttons */
-  --color-btn-bg: #26582a;       /* Button background */
-  --color-btn-text: #fefaf1;     /* Button text */
+  --color-btn-bg: #26582a;    
+  --color-btn-text: #fefaf1;
 
   /* Primary Green Palette */
   --color-mob-green: #445d4a;        /* Mobile menu overlay background */
   --color-mob-green-light: #d4e9cf;  /* Mobile menu borders, hover, active item */
 }
 
-/* Optional dark mode variant */
-@custom-variant dark (&:is(.dark *));
-
 /* -------------------------------------
-   Base Styles
+  Base
 ------------------------------------- */
 html {
   font-family: var(--font-body);
@@ -49,7 +46,9 @@ body {
   padding: 0;
 }
 
-/* Headings use heading font */
+/* -------------------------------------
+  Typography
+------------------------------------- */
 h1,
 h2,
 h3,
@@ -72,7 +71,7 @@ h3.subtitle {
 }
 
 /* -------------------------------------
-   Custom Button Style
+  Button
 ------------------------------------- */
 .btn {
   @apply text-[15px] sm:text-base px-7 sm:px-8 py-3 rounded-3xl transition-all duration-400;
@@ -87,10 +86,10 @@ h3.subtitle {
 }
 
 /* -------------------------------------
-   Utility Classes (Optional)
+  Forms
 ------------------------------------- */
-
-.form-input {
+.form-input,
+.form-textarea {
   @apply
     text-base
     border border-text/30
@@ -105,45 +104,38 @@ h3.subtitle {
 }
 
 .form-textarea {
-  @apply 
-    text-base
-    border border-text/30
-    px-2.5 py-2
-    resize-none
-    shadow-none
-    focus:outline-none 
-    focus-visible:outline-none
-    focus:border-text
-    focus:ring-0 focus-visible:ring-0
-    focus:ring-offset-0 focus-visible:ring-offset-0
-    active:ring-0;
+  @apply resize-none;
 }
 
 .form-label {
   @apply text-xs sm:text-sm font-light gap-0.5;
 }
 
+/* -------------------------------------
+  Utility classes
+------------------------------------- */
+.bg-background { background-color: var(--color-bg); }
+.text-text { color: var(--color-text); }
+.bg-btn { background-color: var(--color-btn-bg); }
+.text-btn { color: var(--color-btn-text); }
+.bg-green { background-color: var(--color-mob-green); }
+.bg-green-light { background-color: var(--color-mob-green-light); }
+
+/* -------------------------------------
+  Animations
+------------------------------------- */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
   animation: fade-in 0.4s ease-out;
 }
 
-/* Background & text utilities */
-.bg-background { background-color: var(--color-bg); }
-.text-text { color: var(--color-text); }
-
-/* Button colors */
-.bg-btn { background-color: var(--color-btn-bg); }
-.text-btn { color: var(--color-btn-text); }
-
-/* Mobile menu overlay */
-.bg-green { background-color: var(--color-green); }
-.bg-green-light { background-color: var(--color-green-light); }
-
+/* -------------------------------------
+  shadcn overrides
+------------------------------------- */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -188,35 +180,5 @@ h3.subtitle {
 
 #contact {
   --radius: 0;
-  /* --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0); */
   --destructive: #df3131;
-  /* --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0); */
 }
