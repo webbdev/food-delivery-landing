@@ -140,7 +140,7 @@ const Header: React.FC = () => {
 
             {/* DESKTOP NAV */}
             <nav aria-label="Main navigation" className="hidden sm:block">
-              <ul className="flex flex-row space-x-8">
+              <ul className="flex flex-row space-x-8 md:space-x-10 lg:space-x-12">
                 {sections.map(({ id, label }) => (
                   <li key={id}>
                     <a
