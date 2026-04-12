@@ -115,6 +115,8 @@ const Hero = () => {
 						animate={{ opacity: pairsLoaded ? 0.95 : 0 }}
 						transition={{ duration: 1, ease: "easeOut" }}
 						onLoad={() => setPearsLoaded(true)}
+						loading="eager"
+						fetchPriority="high"
 						className="w-full h-full object-cover block"
 					/>
 				</div>
@@ -134,6 +136,8 @@ const Hero = () => {
 						animate={{ opacity: pineappleLoaded ? 1 : 0 }}
 						transition={{ duration: 1, ease: "easeOut" }}
 						onLoad={() => setPineappleLoaded(true)}
+						loading="eager"
+						fetchPriority="high"
 						className="w-full h-full object-cover block"
 					/>
 				</div>

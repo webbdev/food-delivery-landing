@@ -108,6 +108,7 @@ const AboutSection = () => {
 					animate={{ opacity: imageLoaded ? 1 : 0 }}
 					transition={{ duration: 1, ease: "easeOut" }}
 					onLoad={() => setImageLoaded(true)}
+					loading="lazy"
 					className="w-full h-auto min-h-[200px] sm:min-h-[340px] max-h-[400px] md:max-h-[400px] lg:max-h-[580px] object-cover block"
 				/>
 			</div>
