@@ -19,6 +19,10 @@ Modern and responsive food delivery landing page built with React, TypeScript, V
 - Vite  
 - TailwindCSS  
 - React Router
+- Framer Motion
+- React Hook Form, 
+- Zod, 
+- shadcn/ui
 
 ## How to Run
 Follow these steps to set up the project locally:
